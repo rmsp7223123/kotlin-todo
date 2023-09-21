@@ -23,5 +23,5 @@ data class MainModel(
     var createDate: Long
 
 ) {
-    constructor() : this(null, 0, "", "", -1)
+    constructor() : this(null, 0, "", "", -1);
 }

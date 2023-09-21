@@ -11,23 +11,23 @@ import androidx.room.RoomDatabase
 * */
 
 @Database(entities = [MainModel::class], version = 1)
-abstract class TodoDatabase : RoomDatabase() {
+abstract class MainDatebase : RoomDatabase() {
 
     abstract fun todoDao(): TodoDao
 
     //데이터베이스 인스턴스를 싱글톤으로 사용하기 위해 companion object 안에 만들어준다
     companion object {
 
-        private var INSTANCE: TodoDatabase? = null
+        private var INSTANCE: MainDatebase? = null
 
         //getInstance() :  여러 스레드가 접근하지 못하도록 synchronized로 설정
-        fun getInstance(context: Context): TodoDatabase? {
+        fun getInstance(context: Context): MainDatebase? {
 
             if (INSTANCE == null) {
-                synchronized(TodoDatabase::class) {
+                synchronized(MainDatebase::class) {
                     INSTANCE = Room.databaseBuilder(  //Room.databaseBuilder 로 인스턴스를 생성
                         context.applicationContext,
-                        TodoDatabase::class.java,
+                        MainDatebase::class.java,
                         "tb_todo"
                     )
                         .fallbackToDestructiveMigration()  //.fallbackToDestructiveMigration() : 데이터베이스가 갱신될 때 기존의 테이블을 버리고 새로 사용하도록 설정

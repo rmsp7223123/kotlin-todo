@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 * 데이터베이스 혹은 네트워크 통신을 통하여 데이터를 얻는 기능을 분리
 * ViewModel 에서는 이 Repository 를 통해 데이터를 얻는다
 * */
-class TodoRepository(application: Application) {
+class MainRepository(application: Application) {
 
     //database, dao todoItems 를 각각 초기화
     private var todoDatabase: TodoDatabase = TodoDatabase.getInstance(application)!!

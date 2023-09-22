@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- data 태그를 사용해서 model 변수를 생성 -->
+    <data>
+        <variable
+            name="todoModel"
+            type="com.example.todo.TodoModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:text="@{todoModel.content}"
+            android:elevation="10dp"
+            android:background="@color/white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
